@@ -1,8 +1,8 @@
+import Products from "@/components/Products";
 import Title from "@/components/Title";
-import Products from "../components/Products";
 
 const getData = async () => {
-  const res = await fetch("https://jsonserver.reactbd.com/phone");
+  const res = await fetch("https://jsonserver.reactbd.com/watch");
 
   if (!res.ok) {
     throw new Error("Something is fishyy");
@@ -11,14 +11,14 @@ const getData = async () => {
   return res.json();
 };
 
-const Home = async () => {
+const Watches = async () => {
   const products = await getData();
   return (
     <main className="bg-stone-200">
-      <Title title="Get Your Favorite Phone" />
+      <Title title="Get Your Watch" />
       <Products products={products} />
     </main>
   );
 };
 
-export default Home;
+export default Watches;
